@@ -1,5 +1,7 @@
-import { Controller, Get, Query, HttpCode } from '@nestjs/common';
+import { Controller, Get, Query, HttpCode, Post, Body } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { User } from './interfaces/user.interface';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -13,9 +15,9 @@ export class UsersController {
     return this.userService.getAll();
   }
 
-  @Get('add')
-  addUser() {
-    this.userService.addUser();
+  @Post()
+  async addUser(@Body() newUser: CreateUserDto) {
+    return await this.userService.addUser(newUser);
   }
 
   @HttpCode(404)
