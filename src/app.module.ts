@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { AuthService } from './auth/auth.service';
 import { GoogleStrategy } from './auth/google.strategy';
 import { AuthModule } from './auth/auth.module';
+import { WorkoutsModule } from './workouts/workouts.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { AuthModule } from './auth/auth.module';
       useCreateIndex: true
     }),
     UsersModule,
-    AuthModule
+    AuthModule,
+    WorkoutsModule
   ],
   controllers: [AppController],
   providers: [AppService],
