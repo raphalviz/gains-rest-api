@@ -22,4 +22,6 @@ export class WorkoutsService {
       console.log(error);
     }
   }
+
+  async updateWorkoout() {}
 }
