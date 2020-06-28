@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 pr:
-- develop
+  branches:
+    include:
+    - develop
 
 pool:
   vmImage: 'ubuntu-latest'
